@@ -152,10 +152,6 @@ npm run test:login
 npx playwright show-report
 ```
 
-<img width="1619" height="1006" alt="image" src="https://github.com/user-attachments/assets/284bd287-45c1-49fc-8277-0dcb2d3ce395" />
-
-<img width="1597" height="1010" alt="image" src="https://github.com/user-attachments/assets/ef78bbbc-9ce4-4d2d-874e-3007bb664000" />
-
 <img width="1621" height="1016" alt="image" src="https://github.com/user-attachments/assets/16f5d940-fcbe-476b-9c4a-4d1383f041df" />
 
 <img width="1915" height="951" alt="image" src="https://github.com/user-attachments/assets/9b054ba2-3e06-4b06-90f0-e59ed3b78525" />
