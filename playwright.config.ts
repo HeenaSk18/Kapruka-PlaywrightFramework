@@ -19,7 +19,11 @@ export default defineConfig({
 
   workers: process.env.CI ? 4 : undefined,
 
-  reporter: 'html',
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['allure-playwright', { resultsDir: 'allure-results' }],
+  ],
 
   use: {
     baseURL: process.env.BASE_URL,
@@ -49,6 +53,7 @@ export default defineConfig({
     },
     {
       name: 'chromium-no-auth', // for tests that test the login flow itself
+      testIgnore: /auth\.setup\.ts/, // added: stops the setup file running twice
       use: {
         ...devices['Desktop Chrome'],
       },

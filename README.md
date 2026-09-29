@@ -152,6 +152,7 @@ npm run test:login
 npx playwright show-report
 ```
 
+<<<<<<< HEAD
 <img width="1619" height="1006" alt="image" src="https://github.com/user-attachments/assets/284bd287-45c1-49fc-8277-0dcb2d3ce395" />
 
 <img width="1597" height="1010" alt="image" src="https://github.com/user-attachments/assets/ef78bbbc-9ce4-4d2d-874e-3007bb664000" />
@@ -165,6 +166,8 @@ npx playwright show-report
 
 
 
+=======
+>>>>>>> 8cf5ce3 (Add Allure reporter and update login test)
 ## License
 
 This project is licensed under ISC.

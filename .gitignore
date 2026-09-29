@@ -1,26 +1,28 @@
-#Node
+# Node
 node_modules/
 
-#Environment variables
+# Environment variables
 .env
 .env.*
 !.env.example
 
-#Playwright
+# Playwright
 test-results/
 playwright-report/
 blob-reports/
+test-e2e/auth.json
 
-#Allure
+# Allure
 allure-report/
 allure-results/
 
-#VS Code
+# VS Code
 .vscode/
 
 # OS files
 .DS_Store
 Thumbs.db
 
-#Logs
-.logs
+# Logs
+*.log
+logs/
