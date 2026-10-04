@@ -179,7 +179,3 @@ npx playwright show-report
 <img width="1915" height="951" alt="image" src="https://github.com/user-attachments/assets/9b054ba2-3e06-4b06-90f0-e59ed3b78525" />
 
 <img width="1921" height="956" alt="image" src="https://github.com/user-attachments/assets/a1c1d9ec-b1d8-4900-b83f-b55a90968460" />
-
-## License
-
-This project is licensed under ISC.
