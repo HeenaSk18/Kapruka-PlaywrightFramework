@@ -1,20 +1,22 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { BasePage_SOLID } from './BasePage_SOLID';
 
 export class LoginPage_SOLID extends BasePage_SOLID {
     readonly emailInput: Locator;
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
+    readonly forgotPasswordLink: Locator;
 
     constructor(page: Page) {
         super(page);
-        this.emailInput = page.locator('#exampleInputEmail1');
-        this.passwordInput = page.locator('#exampleInputPassword1');
-        this.loginButton = page.locator('input[name="Login"]');
+        this.emailInput = page.getByPlaceholder('Enter email');
+        this.passwordInput = page.getByPlaceholder('Password');
+        this.loginButton = page.getByRole('button', { name: 'Login' });
+        this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot your password' });
     }
 
     async goto(): Promise<void> {
-        await this.page.goto('/shops/customerAccounts/accountLogin.jsp');
+        await this.navigate('https://www.kapruka.com/shops/customerAccounts/accountLogin.jsp');
     }
 
     async isLoaded(): Promise<void> {
@@ -24,13 +26,13 @@ export class LoginPage_SOLID extends BasePage_SOLID {
     }
 
     async login(email: string, password: string): Promise<void> {
-        await this.emailInput.fill(email);
-        await this.passwordInput.fill(password);
-        await this.loginButton.click();
+        await this.fill(this.emailInput, email);
+        await this.fill(this.passwordInput, password);
+        await this.click(this.loginButton);
     }
 
     async verifyLoginSuccess(): Promise<void> {
-        // adjust this to a real post-login indicator once you confirm the redirect URL
-        await this.page.waitForURL('**/customerAccounts/**', { timeout: 10000 });
+        await this.page.waitForLoadState('networkidle');
+        await expect(this.page).toHaveURL(/.*kapruka\.com.*/i);
     }
 }

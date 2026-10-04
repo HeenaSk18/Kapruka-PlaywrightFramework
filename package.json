@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:login": "playwright test test-e2e/login_SOLID.spec.ts --headed --project=chromium"
+    "test:login": "playwright test test-e2e/login_SOLID.spec.ts --headed --project=chromium-no-auth",
+    "test:allure": "node scripts/run-allure-tests.js",
+    "allure:generate": "node scripts/generate-allure.js",
+    "allure:open": "allure open allure-report"
   },
   "keywords": [],
   "author": "",

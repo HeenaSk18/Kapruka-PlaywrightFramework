@@ -53,7 +53,7 @@ export default defineConfig({
     },
     {
       name: 'chromium-no-auth', // for tests that test the login flow itself
-      testIgnore: /auth\.setup\.ts/, // added: stops the setup file running twice
+      testMatch: /login_SOLID\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],
       },

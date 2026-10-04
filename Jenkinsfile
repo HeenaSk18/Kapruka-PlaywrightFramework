@@ -25,13 +25,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'npm ci'
             }
         }
 
-        stage('Run Playwright Tests') {
+        stage('Run Tests and Generate Reports') {
             steps {
-                bat 'npx playwright test'
+                bat 'npm run test:allure'
             }
         }
     }
@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             archiveArtifacts(
-                artifacts: 'playwright-report/**',
+                artifacts: 'playwright-report/**, allure-results/**, allure-report/**, test-results/**',
                 allowEmptyArchive: true
             )
         }

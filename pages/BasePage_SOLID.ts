@@ -1,32 +1,40 @@
-import {Page, Locator} from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
-//textbox, mouse click
+export abstract class BasePage_SOLID {
+    protected readonly page: Page;
 
-export abstract class BasePage_SOLID
-{
-    readonly page: Page;
-
-    constructor(page: Page)
-    {
-        this.page = page; //LHS this age (line # 7) , RHS page - constrctutor parameter
+    constructor(page: Page) {
+        this.page = page;
     }
-async click(locator: Locator): Promise<void>
-{
-    await locator.waitFor({state: 'visible'});
-    await locator.click();
-}
-async navigate(url: string): Promise<void>
-{
-    await this.page.goto(url, {waitUntil: 'load'});
-}
-async fill(locator: Locator, value: string): Promise <void>
-{
-    await locator.waitFor({state: 'visible'})
-    await locator.fill(value); //hardcoding
-}
-abstract isLoaded(): Promise<void>;
 
+    async click(locator: Locator): Promise<void> {
+        await locator.waitFor({ state: 'visible' });
+        await locator.click();
+    }
+
+    async navigate(url: string): Promise<void> {
+        await this.page.goto(url, { waitUntil: 'domcontentloaded' });
+    }
+
+    async fill(locator: Locator, value: string): Promise<void> {
+        await locator.waitFor({ state: 'visible' });
+        await locator.fill(value);
+    }
+
+    async type(locator: Locator, value: string): Promise<void> {
+        await locator.waitFor({ state: 'visible' });
+        await locator.type(value);
+    }
+
+    async scrollTo(locator: Locator): Promise<void> {
+        await locator.waitFor({ state: 'visible' });
+        await locator.scrollIntoViewIfNeeded();
+    }
+
+    async selectOption(locator: Locator, value: string): Promise<void> {
+        await locator.waitFor({ state: 'visible' });
+        await locator.selectOption({ label: value });
+    }
+
+    abstract isLoaded(): Promise<void>;
 }
-//scroll
-//control - Open closed principle open for extension, closed for modification
-//S - Single responsibility principle

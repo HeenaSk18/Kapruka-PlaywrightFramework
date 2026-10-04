@@ -8,7 +8,6 @@ dotenv.config({
 });
 
 const authFile = 'test-e2e/auth.json';
-
 const TEST_EMAIL = process.env.TEST_EMAIL;
 const TEST_PASSWORD = process.env.TEST_PASSWORD;
 
@@ -21,6 +20,7 @@ if (!TEST_EMAIL || !TEST_PASSWORD) {
 
 setup('authenticate', async ({ page }) => {
     const loginPage = new LoginPage_SOLID(page);
+
     await loginPage.goto();
     await loginPage.isLoaded();
     await loginPage.login(TEST_EMAIL, TEST_PASSWORD);
