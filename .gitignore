@@ -10,7 +10,9 @@ node_modules/
 test-results/
 playwright-report/
 blob-reports/
+auth.json
 test-e2e/auth.json
+test.zip
 
 # Allure
 allure-report/

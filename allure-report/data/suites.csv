@@ -1,7 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","5813","currency can be switched to USD","chromium","2026-10-04","passed","2026-10-04","Kapruka site smoke tests","site-smoke.spec.ts","",""
-"","4572","Valid user should login successfully","chromium-no-auth","2026-10-04","passed","2026-10-04","Kapruka Login Test","login_SOLID.spec.ts","",""
-"","4729","customized cake form accepts a cake message","chromium","2026-10-04","passed","2026-10-04","Kapruka site smoke tests","site-smoke.spec.ts","",""
-"","5162","homepage loads with product search","chromium","2026-10-04","passed","2026-10-04","Kapruka site smoke tests","site-smoke.spec.ts","",""
-"","4598","authenticate","setup","2026-10-04","passed","2026-10-04","","auth.setup.ts","",""
-"","4770","combo gifts category displays its products section","chromium","2026-10-04","passed","2026-10-04","Kapruka site smoke tests","site-smoke.spec.ts","",""
