@@ -27,4 +27,10 @@ Thumbs.db
 
 # Logs
 *.log
-logs/
+logs/node_modules/
+allure-report/
+allure-results/
+test-results/
+playwright-report/
+test.zip
+auth.json
