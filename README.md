@@ -177,6 +177,8 @@ npx playwright show-report
 ```
 
 
+
+
 <img width="1915" height="951" alt="image" src="https://github.com/user-attachments/assets/9b054ba2-3e06-4b06-90f0-e59ed3b78525" />
 
 
